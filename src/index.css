@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jet: #121212;
+  --color-charcoal: #1c1c1c;
+  --color-brand: #D7262B;
+  --color-brand-deep: #A51C20;
+  --font-body: system-ui, -apple-src, sans-serif;
+  --font-display: system-ui, -apple-src, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-jet font-body text-white antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display uppercase tracking-wide;
+  }
+  ::selection {
+    background: #D7262B;
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid #D7262B;
+    outline-offset: 2px;
+  }
+  img { max-width: 100%; }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-display text-lg font-semibold uppercase tracking-wider transition-all duration-300 select-none;
+    clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  }
+  .btn-primary { @apply bg-brand text-white hover:bg-brand-deep hover:shadow-[0_0_30px_rgba(215,38,43,.5)]; }
+  .btn-dark { @apply bg-charcoal text-white hover:bg-white hover:text-jet; }
+  .btn-outline { @apply bg-white/10 text-white backdrop-blur hover:bg-white hover:text-jet; }
+  .btn-wa { @apply bg-[#25D366] text-jet hover:bg-white; }
+  .field {
+    @apply w-full border border-white/15 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none transition focus:border-brand focus:bg-white/10;
+  }
+  .field-error { @apply border-brand; }
+  .metal-card {
+    background: linear-gradient(145deg, #202020 0%, #121212 60%, #1c1c1c 100%);
+    @apply border border-white/10;
+  }
+  .brushed {
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 3px),
+      linear-gradient(180deg, #1a1a1a, #0b0b0b);
+  }
+  .text-gradient-silver {
+    background: linear-gradient(180deg, #fff 0%, #C9CDD2 55%, #7d8186 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Signature checkered racing flag pattern */
+.checkered {
+  background: repeating-conic-gradient(#0B0B0B 0% 25%, #ffffff 0% 50%) 0 0 / 20px 20px;
+}
+.checkered-red {
+  background: repeating-conic-gradient(#A51C20 0% 25%, #D7262B 0% 50%) 0 0 / 20px 20px;
+}
+
+/* Swiper theming */
+.swiper-pagination-bullet { background: #fff !important; opacity: .4; }
+.swiper-pagination-bullet-active { background: #D7262B !important; opacity: 1; }
+.swiper-button-next, .swiper-button-prev { color: #D7262B !important; }
+.swiper-button-next:after, .swiper-button-prev:after { font-size: 22px !important; font-weight: 800; }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom page scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0B0B0B; }
+::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #D7262B; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
