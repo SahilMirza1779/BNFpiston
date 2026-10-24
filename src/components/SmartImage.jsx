@@ -9,7 +9,7 @@ export default function SmartImage({ src, alt, className = '', imgClassName = ''
       <div
         role="img"
         aria-label={alt}
-        className={`flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#262626] to-[#111] text-white/30 ${className}`}
+        className={`flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-gray-100 to-gray-50 text-gray-400 ${className}`}
       >
         <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="2" />

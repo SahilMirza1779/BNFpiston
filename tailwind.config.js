@@ -6,8 +6,8 @@ export default {
       colors: {
         brand: { DEFAULT: '#D7262B', deep: '#A51C20' },
         jet: '#0B0B0B',
-        charcoal: '#1A1A1A',
-        silver: '#C9CDD2',
+        charcoal: '#FFFFFF',
+        silver: '#64748B',
       },
       fontFamily: {
         display: ['Teko', 'Oswald', 'Impact', 'sans-serif'],

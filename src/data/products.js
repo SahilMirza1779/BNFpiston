@@ -5,14 +5,14 @@
 //  No prices on the site – it always shows "Price on Request".
 // ============================================================
 
+import { createProductImages } from './productImages.js'
+
 export const categories = [
   'Piston Kits',
   'Piston Rings',
   'Piston Pins & Circlips',
   'Oversize Pistons',
 ]
-
-const img = (name) => `/images/${name}`
 
 const standardKit = [
   'Piston',
@@ -42,7 +42,7 @@ export const products = [
     compatibleBrand: 'Honda',
     compatibleBikes: ['Honda CD100', 'Hero Honda CD100', 'Hero Honda CD Dawn', 'Hero Honda Sleek'],
     sizes,
-    images: [img('gn5-top-label.jpg'), img('gn5-top.jpg'), img('gn5-side.jpg'), img('piston-inside.jpg'), img('piston-4view.jpg')],
+    images: createProductImages('GN5 / CD100', 'Piston Kits'),
     description:
       'Our best-selling GN5 piston kit for the popular 100cc commuter engines. Complete kit with piston, pin, circlips and rings, packed in a branded tin box.',
     features: commonFeatures,
@@ -58,7 +58,7 @@ export const products = [
     compatibleBrand: 'Hero',
     compatibleBikes: ['Hero Splendor', 'Hero Splendor Plus', 'Hero Super Splendor'],
     sizes,
-    images: [img('piston-kit-full.jpg'), img('piston-crown-std.jpg'), img('piston-4view.jpg')],
+    images: createProductImages('Splendor 100', 'Piston Kits'),
     description:
       'Heavy duty piston kit for Hero Splendor engines. Made for daily use and long distances with smooth running and strong compression.',
     features: commonFeatures,
@@ -74,7 +74,7 @@ export const products = [
     compatibleBrand: 'Hero',
     compatibleBikes: ['Hero Passion', 'Hero Passion Plus', 'Hero Passion Pro'],
     sizes,
-    images: [img('piston-kit-rings.jpg'), img('piston-crown-std.jpg'), img('piston-inside.jpg')],
+    images: createProductImages('Passion', 'Piston Kits'),
     description:
       'Precision made piston kit for Hero Passion series bikes. Tight tolerances for easy fitting and lasting performance.',
     features: commonFeatures,
@@ -90,7 +90,7 @@ export const products = [
     compatibleBrand: 'Bajaj',
     compatibleBikes: ['Bajaj Pulsar 150', 'Bajaj Pulsar 135'],
     sizes,
-    images: [img('piston-kit-full.jpg'), img('piston-4view.jpg'), img('piston-pin-clips.jpg')],
+    images: createProductImages('Pulsar 150', 'Piston Kits'),
     description:
       'High-performance piston kit for Bajaj Pulsar 150. Built to handle high revs and heat with consistent compression.',
     features: commonFeatures,
@@ -106,7 +106,7 @@ export const products = [
     compatibleBrand: 'Bajaj',
     compatibleBikes: ['Bajaj Platina 100', 'Bajaj CT100'],
     sizes,
-    images: [img('piston-kit-rings.jpg'), img('gn5-side.jpg'), img('piston-crown-std.jpg')],
+    images: createProductImages('Platina 100', 'Piston Kits'),
     description:
       'Mileage-friendly piston kit for Bajaj Platina. Low friction rings help keep fuel economy and oil consumption in check.',
     features: commonFeatures,
@@ -122,7 +122,7 @@ export const products = [
     compatibleBrand: 'Bajaj',
     compatibleBikes: ['Bajaj Discover 125', 'Bajaj Discover 135'],
     sizes,
-    images: [img('piston-4view.jpg'), img('piston-kit-full.jpg'), img('piston-inside.jpg')],
+    images: createProductImages('Discover 125', 'Piston Kits'),
     description: 'Reliable replacement piston kit for Bajaj Discover engines with perfect ring seating and smooth pickup.',
     features: commonFeatures,
     inKit: standardKit,
@@ -137,7 +137,7 @@ export const products = [
     compatibleBrand: 'TVS',
     compatibleBikes: ['TVS Apache RTR 160', 'TVS Apache RTR 180'],
     sizes,
-    images: [img('piston-kit-full.jpg'), img('piston-crown-50.jpg'), img('piston-4view.jpg')],
+    images: createProductImages('Apache RTR 160', 'Piston Kits'),
     description: 'Sporty, heavy duty piston kit for TVS Apache. Made for strong acceleration and high-rev reliability.',
     features: commonFeatures,
     inKit: standardKit,
@@ -152,7 +152,7 @@ export const products = [
     compatibleBrand: 'TVS',
     compatibleBikes: ['TVS Star City', 'TVS Star City Plus', 'TVS Sport'],
     sizes,
-    images: [img('piston-kit-rings.jpg'), img('piston-pin-clips.jpg'), img('gn5-top.jpg')],
+    images: createProductImages('Star City', 'Piston Kits'),
     description: 'Durable piston kit for TVS Star City and Sport. A dependable pick for everyday commuting.',
     features: commonFeatures,
     inKit: standardKit,
@@ -167,7 +167,7 @@ export const products = [
     compatibleBrand: 'Honda',
     compatibleBikes: ['Honda CB Shine', 'Honda CB Shine SP'],
     sizes,
-    images: [img('piston-kit-full.jpg'), img('piston-inside.jpg'), img('gn5-side.jpg')],
+    images: createProductImages('CB Shine', 'Piston Kits'),
     description: 'Smooth and quiet piston kit for Honda Shine. Precise machining for easy fitting and long life.',
     features: commonFeatures,
     inKit: standardKit,
@@ -182,7 +182,7 @@ export const products = [
     compatibleBrand: 'Honda',
     compatibleBikes: ['Honda CB Unicorn 150', 'Honda CB Unicorn 160'],
     sizes,
-    images: [img('piston-4view.jpg'), img('piston-kit-rings.jpg'), img('piston-crown-std.jpg')],
+    images: createProductImages('Unicorn 150', 'Piston Kits'),
     description: 'Heavy duty piston kit for Honda Unicorn. Built for steady power delivery on highways and city roads.',
     features: commonFeatures,
     inKit: standardKit,
@@ -197,7 +197,7 @@ export const products = [
     compatibleBrand: 'Yamaha',
     compatibleBikes: ['Yamaha FZ', 'Yamaha FZ-S', 'Yamaha FZ-16'],
     sizes,
-    images: [img('piston-kit-full.jpg'), img('piston-4view.jpg'), img('piston-pin-clips.jpg')],
+    images: createProductImages('FZ 150', 'Piston Kits'),
     description: 'Precision piston kit for Yamaha FZ series. Tight tolerances and strong rings for lasting compression.',
     features: commonFeatures,
     inKit: standardKit,
@@ -212,7 +212,7 @@ export const products = [
     compatibleBrand: 'Multi-brand',
     compatibleBikes: ['Honda', 'Bajaj', 'Hero', 'Yamaha', 'TVS', 'Suzuki (model-wise sets)'],
     sizes,
-    images: [img('rings-set.jpg'), img('piston-kit-rings.jpg')],
+    images: createProductImages('Model-wise Sets', 'Piston Rings'),
     description:
       'High-grade piston ring sets – compression rings and oil ring – available model-wise in STD and oversize. Ask us for your model.',
     features: [
@@ -233,7 +233,7 @@ export const products = [
     compatibleBrand: 'Multi-brand',
     compatibleBikes: ['Honda', 'Bajaj', 'Hero', 'Yamaha', 'TVS', 'Suzuki (model-wise)'],
     sizes: ['STD'],
-    images: [img('piston-pin-clips.jpg'), img('piston-kit-full.jpg')],
+    images: createProductImages('Pin + 2 Circlips', 'Piston Pins & Circlips'),
     description: 'Hardened and ground piston pin with two circlips. Sold separately for repair and replacement.',
     features: ['Hardened and ground finish', 'Accurate diameter for a perfect fit', 'Supplied with 2 circlips'],
     inKit: ['Piston Pin', '2 Circlips'],
@@ -248,7 +248,7 @@ export const products = [
     compatibleBrand: 'Multi-brand',
     compatibleBikes: ['Honda', 'Bajaj', 'Hero', 'Yamaha', 'TVS', 'Suzuki (model-wise)'],
     sizes: ['25', '50', '75', '100'],
-    images: [img('piston-crown-50.jpg'), img('piston-crown-std.jpg'), img('piston-4view.jpg')],
+    images: createProductImages('Oversize Series', 'Oversize Pistons'),
     description:
       'For re-bored cylinders. Oversize pistons are clearly marked on the crown (for example "50"). Tell us your bore size and model.',
     features: ['Clear oversize marking on crown', 'Same quality as STD pistons', 'Available model-wise'],

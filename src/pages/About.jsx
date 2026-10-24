@@ -7,6 +7,7 @@ import SectionTitle from '../components/SectionTitle'
 import SmartImage from '../components/SmartImage'
 import Reveal from '../components/Reveal'
 import { site } from '../data/site'
+import { products } from '../data/products'
 
 const steps = [
   { icon: Factory, title: 'Raw Material', text: 'Selected alloy is checked before it enters production.' },
@@ -27,7 +28,7 @@ export default function About() {
       />
       <PageHeader title="About" highlight="BNF" subtitle="Built in Ankleshwar. Trusted by mechanics and dealers across India." crumbs={[{ label: 'About' }]} />
 
-      <section className="bg-jet py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <Reveal x={-30}>
             <p className="font-display text-xl uppercase tracking-[0.3em] text-brand">Our story</p>
@@ -47,7 +48,7 @@ export default function About() {
           </Reveal>
           <Reveal x={30}>
             <div className="relative">
-              <SmartImage src="/images/box-white-bg.jpg" alt="BNF Piston Kit tin box" className="aspect-[4/3] w-full border border-white/10" contain />
+              <SmartImage src={products[0].images[0]} alt="BNF GN5 / CD100 piston kit illustration" className="aspect-[4/3] w-full border border-gray-200" contain />
               <div className="checkered absolute -bottom-3 -right-3 -z-10 h-24 w-24" aria-hidden="true" />
             </div>
           </Reveal>
@@ -71,7 +72,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-jet py-20 sm:py-28">
+      <section className="bg-gray-50 py-20 sm:py-28">
         <div className="container-x">
           <SectionTitle eyebrow="How we make it" title="Quality" highlight="Process" subtitle="Six steps from raw material to your shop." />
           <ol className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -85,7 +86,7 @@ export default function About() {
                 className="metal-card relative p-7"
               >
                 <span className="absolute right-4 top-2 font-display text-7xl font-bold italic text-brand/20">0{i + 1}</span>
-                <span className="mb-4 flex h-14 w-14 items-center justify-center bg-brand"><Icon size={28} /></span>
+                <span className="mb-4 flex h-14 w-14 items-center justify-center bg-brand text-white"><Icon size={28} /></span>
                 <h3 className="text-3xl font-semibold">{title}</h3>
                 <p className="mt-2 text-silver/75">{text}</p>
               </motion.li>

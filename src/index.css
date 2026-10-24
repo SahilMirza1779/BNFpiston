@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-jet: #121212;
-  --color-charcoal: #1c1c1c;
+  --color-jet: #0B0B0B;
+  --color-charcoal: #ffffff;
+  --color-silver: #64748b;
   --color-brand: #D7262B;
   --color-brand-deep: #A51C20;
   --font-body: system-ui, -apple-src, sans-serif;
@@ -15,7 +16,7 @@
     -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply bg-jet font-body text-white antialiased;
+    @apply bg-gray-50 font-body text-gray-900 antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4 {
@@ -41,24 +42,24 @@
     clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
   }
   .btn-primary { @apply bg-brand text-white hover:bg-brand-deep hover:shadow-[0_0_30px_rgba(215,38,43,.5)]; }
-  .btn-dark { @apply bg-charcoal text-white hover:bg-white hover:text-jet; }
-  .btn-outline { @apply bg-white/10 text-white backdrop-blur hover:bg-white hover:text-jet; }
+  .btn-dark { @apply bg-gray-900 text-white hover:bg-gray-700; }
+  .btn-outline { @apply border border-gray-300 bg-white text-gray-900 hover:bg-gray-100; }
   .btn-wa { @apply bg-[#25D366] text-jet hover:bg-white; }
   .field {
-    @apply w-full border border-white/15 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none transition focus:border-brand focus:bg-white/10;
+    @apply w-full border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none transition focus:border-brand focus:bg-white;
   }
   .field-error { @apply border-brand; }
   .metal-card {
-    background: linear-gradient(145deg, #202020 0%, #121212 60%, #1c1c1c 100%);
-    @apply border border-white/10;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
+    @apply border border-gray-200 text-gray-900;
   }
   .brushed {
     background:
-      repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 3px),
-      linear-gradient(180deg, #1a1a1a, #0b0b0b);
+      repeating-linear-gradient(90deg, rgba(15,23,42,.025) 0 1px, transparent 1px 3px),
+      linear-gradient(180deg, #ffffff, #f8fafc);
   }
   .text-gradient-silver {
-    background: linear-gradient(180deg, #fff 0%, #C9CDD2 55%, #7d8186 100%);
+    background: linear-gradient(180deg, #334155 0%, #64748b 55%, #94a3b8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -74,7 +75,7 @@
 }
 
 /* Swiper theming */
-.swiper-pagination-bullet { background: #fff !important; opacity: .4; }
+.swiper-pagination-bullet { background: #64748b !important; opacity: .4; }
 .swiper-pagination-bullet-active { background: #D7262B !important; opacity: 1; }
 .swiper-button-next, .swiper-button-prev { color: #D7262B !important; }
 .swiper-button-next:after, .swiper-button-prev:after { font-size: 22px !important; font-weight: 800; }
@@ -85,8 +86,8 @@
 
 /* Custom page scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0B0B0B; }
-::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
 ::-webkit-scrollbar-thumb:hover { background: #D7262B; }
 
 @media (prefers-reduced-motion: reduce) {

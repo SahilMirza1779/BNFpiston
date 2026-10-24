@@ -1,16 +1,32 @@
-export default function FormField({ label, name, error, as = 'input', required, ...props }) {
-  const Tag = as
+export default function FormField({
+  label,
+  name,
+  error,
+  as = "input",
+  required,
+  ...props
+}) {
+  const Tag = as;
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-silver">
-        {label} {required && <span className="text-brand" aria-hidden="true">*</span>}
+      {/* text-silver ko text-gray-700 kiya */}
+      <label
+        htmlFor={name}
+        className="mb-1.5 block text-sm font-medium text-gray-700"
+      >
+        {label}{" "}
+        {required && (
+          <span className="text-brand" aria-hidden="true">
+            *
+          </span>
+        )}
       </label>
       <Tag
         id={name}
         name={name}
         aria-invalid={!!error}
         aria-describedby={error ? `${name}-err` : undefined}
-        className={`field ${error ? 'field-error' : ''} ${as === 'textarea' ? 'min-h-[120px] resize-y' : ''}`}
+        className={`field ${error ? "field-error" : ""} ${as === "textarea" ? "min-h-[120px] resize-y" : ""}`}
         {...props}
       />
       {error && (
@@ -19,5 +35,5 @@ export default function FormField({ label, name, error, as = 'input', required, 
         </p>
       )}
     </div>
-  )
+  );
 }

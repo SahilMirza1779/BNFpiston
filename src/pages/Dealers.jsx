@@ -61,7 +61,7 @@ export default function Dealers() {
       />
       <PageHeader title="Become a" highlight="Dealer" subtitle="Stock BNF piston kits and rings in your shop." crumbs={[{ label: 'Dealers' }]} />
 
-      <section className="bg-jet py-16 sm:py-24">
+      <section className="bg-gray-50 py-16 sm:py-24">
         <div className="container-x">
           <SectionTitle eyebrow="Dealer benefits" title="Why sell" highlight="BNF?" />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

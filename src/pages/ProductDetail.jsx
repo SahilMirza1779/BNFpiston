@@ -53,7 +53,7 @@ function Detail({ product }) {
       />
       <PageHeader title={product.name} crumbs={[{ label: 'Products', to: '/products' }, { label: product.name }]} />
 
-      <section className="bg-jet py-12 sm:py-16">
+      <section className="bg-gray-50 py-12 sm:py-16">
         <div className="container-x grid gap-10 lg:grid-cols-2">
           {/* gallery */}
           <div>
@@ -63,7 +63,7 @@ function Detail({ product }) {
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
               aria-label="Open image full screen"
-              className="group relative block aspect-square w-full cursor-zoom-in overflow-hidden border border-white/10 bg-black"
+              className="group relative block aspect-square w-full cursor-zoom-in overflow-hidden border border-gray-200 bg-white"
             >
               <SmartImage
                 src={product.images[active]}
@@ -73,7 +73,7 @@ function Detail({ product }) {
                 style={{ transformOrigin: origin, transform: hovering ? 'scale(1.8)' : 'scale(1)' }}
                 eager
               />
-              <span className="absolute right-3 top-3 bg-black/70 p-2"><ZoomIn size={20} /></span>
+              <span className="absolute right-3 top-3 bg-gray-900/70 p-2 text-white"><ZoomIn size={20} /></span>
             </button>
             <ul className="mt-3 grid grid-cols-5 gap-2">
               {product.images.map((src, i) => (
@@ -82,7 +82,7 @@ function Detail({ product }) {
                     onClick={() => setActive(i)}
                     aria-label={`Show image ${i + 1}`}
                     aria-current={active === i}
-                    className={`block aspect-square w-full overflow-hidden border-2 transition ${active === i ? 'border-brand' : 'border-white/10 opacity-70 hover:opacity-100'}`}
+                    className={`block aspect-square w-full overflow-hidden border-2 transition ${active === i ? 'border-brand' : 'border-gray-200 opacity-70 hover:opacity-100'}`}
                   >
                     <SmartImage src={src} alt="" className="h-full w-full" />
                   </button>
@@ -93,7 +93,7 @@ function Detail({ product }) {
 
           {/* info */}
           <div>
-            <span className="inline-block bg-brand px-3 py-1 font-display text-xl uppercase leading-none tracking-wider">{product.model}</span>
+            <span className="inline-block bg-brand px-3 py-1 font-display text-xl uppercase leading-none tracking-wider text-white">{product.model}</span>
             <h2 className="mt-3 text-4xl font-bold italic sm:text-5xl">{product.name}</h2>
             <p className="mt-1 text-silver/60">{product.category} • {product.compatibleBrand}</p>
             <p className="mt-4 leading-relaxed text-silver/85">{product.description}</p>
@@ -107,7 +107,7 @@ function Detail({ product }) {
                     key={s}
                     onClick={() => setSize(s)}
                     aria-pressed={size === s}
-                    className={`min-w-14 px-4 py-2 font-display text-xl uppercase transition ${size === s ? 'bg-brand' : 'border border-white/20 hover:border-brand'}`}
+                    className={`min-w-14 px-4 py-2 font-display text-xl uppercase transition ${size === s ? 'bg-brand text-white' : 'border border-gray-300 hover:border-brand'}`}
                   >
                     {s}
                   </button>
@@ -117,7 +117,7 @@ function Detail({ product }) {
 
             <div className="mt-6">
               <p className="mb-2 text-sm font-medium text-silver">Quantity</p>
-              <div className="inline-flex items-center border border-white/20">
+              <div className="inline-flex items-center border border-gray-300">
                 <button onClick={() => setQtySafe(qty - 1)} aria-label="Decrease quantity" className="p-3 hover:bg-brand"><Minus size={16} /></button>
                 <input
                   type="number"
@@ -153,12 +153,12 @@ function Detail({ product }) {
         <div className="container-x mt-14 grid gap-8 lg:grid-cols-2">
           <div>
             <h3 className="mb-4 text-3xl font-semibold">Specifications</h3>
-            <table className="w-full border border-white/10 text-left text-sm">
+            <table className="w-full border border-gray-200 text-left text-sm">
               <tbody>
                 {specs.map(([k, v], i) => (
-                  <tr key={k} className={i % 2 ? 'bg-white/[0.03]' : 'bg-black/30'}>
+                  <tr key={k} className={i % 2 ? 'bg-white' : 'bg-gray-50'}>
                     <th scope="row" className="w-2/5 px-4 py-3 font-medium text-silver">{k}</th>
-                    <td className="px-4 py-3 text-white">{v}</td>
+                    <td className="px-4 py-3 text-gray-900">{v}</td>
                   </tr>
                 ))}
               </tbody>

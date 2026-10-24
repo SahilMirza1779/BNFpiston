@@ -10,7 +10,7 @@ import { sizeOptions } from '../data/site'
 
 const chip = (active) =>
   `px-4 py-2 font-display text-lg uppercase tracking-wider transition ${
-    active ? 'bg-brand text-white' : 'border border-white/20 text-silver hover:border-brand hover:text-white'
+    active ? 'bg-brand text-white' : 'border border-gray-300 text-silver hover:border-brand hover:text-brand'
   }`
 
 export default function Products() {
@@ -61,7 +61,7 @@ export default function Products() {
       />
       <PageHeader title="Our" highlight="Products" subtitle="Search by bike model, filter by brand and size, then enquire on WhatsApp." crumbs={[{ label: 'Products' }]} />
 
-      <section className="bg-jet py-12 sm:py-16">
+      <section className="bg-gray-50 py-12 sm:py-16">
         <div className="container-x">
           <div className="metal-card mb-8 space-y-5 p-5">
             <div className="relative">

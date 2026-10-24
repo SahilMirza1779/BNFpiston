@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-// Logo image with a compact red "BNF" badge fallback if /images/logo.png is missing.
-export default function Logo({ className = 'h-11 w-11', ...rest }) {
-  const [failed, setFailed] = useState(false)
+// Logo image with a compact red "BNF" badge fallback if /bnf-logo.png is missing.
+export default function Logo({ className = "h-11 w-11", ...rest }) {
+  const [failed, setFailed] = useState(false);
+
   if (failed) {
     return (
       <span
@@ -12,15 +13,16 @@ export default function Logo({ className = 'h-11 w-11', ...rest }) {
       >
         BNF
       </span>
-    )
+    );
   }
+
   return (
     <img
-      src="/images/logo.png"
+      src="/bnf-logo.png" // <-- YAHAN PATH CHANGE KIYA HAI
       alt="BNF Piston & Rings logo"
       onError={() => setFailed(true)}
       className={`shrink-0 object-contain ${className}`}
       {...rest}
     />
-  )
+  );
 }

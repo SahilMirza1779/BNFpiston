@@ -1,6 +1,6 @@
 import Reveal from './Reveal'
 
-export default function SectionTitle({ eyebrow, title, highlight, subtitle, align = 'center', light = true }) {
+export default function SectionTitle({ eyebrow, title, highlight, subtitle, align = 'center', light = false }) {
   const alignCls = align === 'center' ? 'text-center mx-auto' : 'text-left'
   return (
     <Reveal className={`mb-12 max-w-3xl ${alignCls}`}>

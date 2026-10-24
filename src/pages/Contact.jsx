@@ -48,7 +48,7 @@ export default function Contact() {
       />
       <PageHeader title="Contact" highlight="Us" subtitle={`Talk directly to ${site.contactPerson} for prices, models and bulk orders.`} crumbs={[{ label: 'Contact' }]} />
 
-      <section className="bg-jet py-16 sm:py-20">
+      <section className="bg-gray-50 py-16 sm:py-20">
         <div className="container-x">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map(({ icon: Icon, title, text, href, external }, i) => (
@@ -58,7 +58,7 @@ export default function Contact() {
                   {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="metal-card group block h-full p-6 transition hover:-translate-y-1 hover:border-brand/60"
                 >
-                  <span className="mb-4 flex h-12 w-12 items-center justify-center bg-brand transition group-hover:rotate-6"><Icon size={24} /></span>
+                  <span className="mb-4 flex h-12 w-12 items-center justify-center bg-brand text-white transition group-hover:rotate-6"><Icon size={24} /></span>
                   <h3 className="text-2xl font-semibold">{title}</h3>
                   <p className="mt-1 break-words text-sm text-silver/75">{text}</p>
                 </a>
@@ -84,7 +84,7 @@ export default function Contact() {
             <div className="space-y-6">
               <div className="metal-card p-6 sm:p-8">
                 <h2 className="flex items-center gap-3 text-3xl font-bold italic"><Clock className="text-brand" /> Business Hours</h2>
-                <ul className="mt-4 divide-y divide-white/10">
+                <ul className="mt-4 divide-y divide-gray-200">
                   {site.hours.map((h) => (
                     <li key={h.day} className="flex flex-wrap justify-between gap-2 py-3">
                       <span className="text-silver">{h.day}</span>
@@ -98,7 +98,7 @@ export default function Contact() {
                 src={site.mapEmbed}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="h-72 w-full border border-white/10"
+                className="h-72 w-full border border-gray-200"
               />
             </div>
           </div>

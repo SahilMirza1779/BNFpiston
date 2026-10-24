@@ -13,16 +13,17 @@ npm install      # only the first time
 npm run dev      # starts the site at http://localhost:5173
 ```
 
-## 2. Add your images
+## 2. Product images
 
-Put all photos inside `public/images/` with these exact names:
+Every catalog product has three original, locally generated product illustrations: a main view, a side/detail view and an alternate view. The illustrations are labeled for the product and category, so the catalog does not depend on missing image files or external image services. The packaging gallery also uses locally generated illustrations. These are illustrations, not photographs of the physical products or packaging.
 
-`logo.png`, `box-front.jpg`, `box-top.jpg`, `box-back.jpg`, `box-white-bg.jpg`, `carton.jpg`,
-`gn5-top.jpg`, `gn5-top-label.jpg`, `gn5-side.jpg`, `piston-inside.jpg`, `piston-4view.jpg`,
-`piston-crown-std.jpg`, `piston-crown-50.jpg`, `piston-kit-full.jpg`, `piston-kit-rings.jpg`,
-`piston-pin-clips.jpg`, `rings-set.jpg`
+To use real product photos instead, put them in `public/images/` and replace that product's `createProductImages(model, category)` call in `src/data/products.js` with an array of image paths, for example:
 
-If a picture is missing, the site shows a neutral placeholder instead of breaking.
+```js
+images: ['/images/splendor-front.jpg', '/images/splendor-side.jpg', '/images/splendor-top.jpg'],
+```
+
+To show real packaging photos, place them in `public/images/` and replace the generated image list in `src/components/home/PackagingGallery.jsx` with those image paths.
 
 ## 3. Add or edit a product
 
@@ -38,7 +39,7 @@ Open `src/data/products.js`. Copy one product block, paste it at the end of the 
   compatibleBrand: 'Honda',            // Honda, Bajaj, Hero, Yamaha, TVS, Suzuki
   compatibleBikes: ['Honda XYZ'],
   sizes,                               // or ['STD', '25', '50']
-  images: [img('piston-kit-full.jpg')],// photos from public/images
+  images: createProductImages('My New Model', 'Piston Kits'), // three original product illustrations
   description: 'Short description here.',
   features: commonFeatures,
   inKit: standardKit,
